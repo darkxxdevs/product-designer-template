@@ -12,6 +12,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: #000;
 }
 
 ::-webkit-scrollbar {
@@ -19,18 +20,19 @@ body {
 }
 
 
-#circle {
+.circle {
     width: 10px;
     height: 10px;
     position: absolute;
     background-color: white;
-    z-index: 999999;
+    z-index: 9999;
     border-radius: 50%;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1)0.5s;
 
 }
 
 #main {
+    background-color: #000;
     width: 100%;
 }
 
@@ -59,8 +61,11 @@ body {
 
 .bounding {
     width: fit-content;
-    background-color: red;
     overflow: hidden;
+}
+
+.bounding .boundingelem {
+    transform: translateY(190%);
 }
 
 #head-text h1 {
@@ -93,7 +98,7 @@ body {
 
 
 @media (max-width:600px) {
-    #circle {
+    .circle {
         display: none;
     }
 
@@ -109,22 +114,16 @@ body {
         display: none;
     }
 
-    .bounding {
-        margin-left: 20%;
-
-    }
-
-
     #head-text {
         margin-top: 11%;
     }
 
-    #top-head-text {
-        margin-left: 19%;
+    .bounding {
+        margin-left: 20%;
     }
 
-    #blocktext {
-        margin-left: 19%;
+    .bounding .boundingelem {
+        transform: translateY(190%);
     }
 
     #blocktext h4 {
@@ -140,8 +139,10 @@ body {
     margin-top: 7%;
     text-align: right;
     padding-right: 1%;
-
+    display: flex;
+    justify-content: flex-end;
 }
+
 
 @media (max-width:600px) {
     #small-head {
@@ -265,7 +266,7 @@ body {
 
 .element img {
     position: absolute;
-    z-index: 999;
+    z-index: 99;
     height: 130%;
     display: none;
 }
@@ -320,30 +321,22 @@ body {
 
 }
 
-#about-lines button {
-    background-color: black;
-    margin-top: 5%;
-    padding: 10px 30px;
+
+#about-lines a {
+    color: #ffffff;
+    border: 1.5px solid #dddd;
+    position: relative;
+    padding: 8px 25px;
+    top: 27%;
     border-radius: 50px;
-    border-color: #fff;
-    font-size: 1.8vmin;
+    text-decoration: none;
     transition: 0.3s all ease;
 }
 
-#about-lines button a {
-    text-decoration: none;
-}
-
-#about-lines button:hover {
-    background-color: #fff;
-    color: #000;
-    transform: scale(0.9);
-
-}
-
-#about-lines button a:hover {
-    color: #000;
-
+#about-lines a:hover {
+    background-color: #ddd;
+    border-color: #000;
+    color: black;
 }
 
 @media (max-width:600px) {
@@ -363,18 +356,16 @@ body {
         font-size: 3svmin;
     }
 
+    #about-lines a {
+        left: 33%;
+    }
+
     #about-logo {
         width: 66%;
         height: 28%;
     }
 
-    #about-lines button {
-        font-size: 3vmin;
-        margin-left: 33%;
-        margin-top: 7%;
-    }
-
-    #about-lines h3 {
+    #margi #about-lines h3 {
         margin-left: 35%;
     }
 }
