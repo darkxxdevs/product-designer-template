@@ -1,35 +1,14 @@
-var timer;
 
-function mouseMovement(xscale, yscale) {
-    window.addEventListener("mousemove", (dets) => {
-        document.querySelector(".circle").style.transform = `translate(${dets.clientX}px , ${dets.clientY}px) scale(${xscale}, ${yscale})`
-    })
+const getMouseFollower = () => {
+    if (window.innerWidth > 800) {
+        const cursor = new MouseFollower({
+            skewing: 2,
+        });
+    }
 }
 
-function cicledeformation() {
-    var xscale = 1;
-    var yscale = 1;
 
-    var xprev = 0;
-    var yprev = 0;
-    window.addEventListener("mousemove", (dets) => {
-        clearTimeout(timer);
-        xscale = gsap.utils.clamp(0.8, 1.2, dets.clientX - xprev);
-        yscale = gsap.utils.clamp(0.8, 1.2, dets.clientX - yprev);
-
-
-        xprev = dets.clientX;
-        yprev = dets.clientY;
-
-        mouseMovement(xscale, yscale);
-
-        timer = setTimeout(() => {
-            document.querySelector(".circle").style.transform = `translate(${dets.clientX}px , ${dets.clientY}px , scale(1,1)))`
-        }, 100);
-    })
-}
-
-mouseMovement();
+getMouseFollower();
 
 
 function homePageAnimation() {

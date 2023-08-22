@@ -20,17 +20,6 @@ body {
 }
 
 
-.circle {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    background-color: white;
-    z-index: 9999;
-    border-radius: 50%;
-    transition: all cubic-bezier(0.075, 0.82, 0.165, 1)0.5s;
-
-}
-
 #main {
     background-color: #000;
     width: 100%;
